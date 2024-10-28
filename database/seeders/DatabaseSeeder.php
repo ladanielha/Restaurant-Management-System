@@ -12,11 +12,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        $this->command->info('  > Start seeding...');
+        $this->command->newLine();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $startTime = microtime(true);
+
+        \App\Models\User::factory(10)->create();
+
+        \App\Models\User::factory()->create([
+            'name' => 'Test User',
+            'email' => 'super@theresto.com',
+        ]);
+
+
+        $endTime = round(microtime(true) - $startTime, 2);
+
+        $this->command->info("  > ✔ OK: Took {$endTime} seconds.");
     }
 }
