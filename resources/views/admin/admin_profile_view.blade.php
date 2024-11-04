@@ -90,8 +90,7 @@
                             <!-- end timeline content-->
 
                             <div class="tab-pane" id="settings">
-                                <form method="post"
-                                    enctype="multipart/form-data">
+                                <form method="post" action="{{ route('store.profile') }}" enctype="multipart/form-data">
                                     @csrf
 
                                     <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Personal
@@ -99,9 +98,16 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="mb-3">
-                                                <label for="firstname" class="form-label">First Name</label>
+                                                <label for="firstname" class="form-label">Name</label>
                                                 <input type="text" name="name" class="form-control" id="firstname"
                                                     value="{{ $adminData->name }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="firstname" class="form-label">Username</label>
+                                                <input type="text" name="name" class="form-control" id="firstname"
+                                                    value="{{ $adminData->username }}">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -113,14 +119,14 @@
                                         </div> <!-- end col -->
 
 
-
+{{-- 
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="lastname" class="form-label">Phone</label>
                                                 <input type="text" name="phone" class="form-control" id="lastname"
                                                     value="{{ $adminData->phone }}">
                                             </div>
-                                        </div> <!-- end col -->
+                                        </div> <!-- end col --> --}}
 
 
 
