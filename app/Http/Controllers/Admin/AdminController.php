@@ -43,6 +43,7 @@ class AdminController extends Controller
     }// End Method 
 
     public function StoreProfile(Request $request){
+        dd($request->all());
         $id = Auth::user()->id;
         $data = User::find($id);
         $data->name = $request->name;
